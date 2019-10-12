@@ -106,4 +106,4 @@ int main()
 }
 ```
 
-Check ./ for complete rules definition.
+Check ini_schema_rules.md for complete rules definition.
