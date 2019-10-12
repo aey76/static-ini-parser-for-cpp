@@ -4,7 +4,7 @@
 # static-ini-reader-for-cpp
 Define INI schema to generate INI file and cpp code to load and validate INI files in static way.
 The idea is to make INI schema file, run the python script on it to produce cpp class that has:
-1. publich load function that load and validate your INI file. if validation pass the function populate all the public variables.
+1. public load function that load and validate your INI file. if validation pass the function populate all the public variables.
 2. public variable for every variable in the INI file.
 
 ## INI Schema File
