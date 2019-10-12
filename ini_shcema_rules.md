@@ -38,12 +38,12 @@ The default value must be valid value.
 var_name = mandatory, int, [-20, 1900]
 ```
 
-**optional uint32_t variable with default value to 100**:
+**optional uint32_t variable with default value of 100**:
 ``` INI
 var_name = optional, uint32_t, [20, 1900], [100]
 ```
 
-**optional bool variable with default value to true**:
+**optional bool variable with default value of true**:
 ``` INI
 var_name = optional, bool, [*], [true]
 ```
@@ -53,7 +53,7 @@ var_name = optional, bool, [*], [true]
 var_name = mandatory, enum class MyEnum, [Val_0, Val_1, Val_2, Val_3]
 ```
 
-**optional enum variable with default value to Val_1**:
+**optional enum variable with default value of Val_1**:
 ``` INI
 var_name = optional, enum class MyEnum, [Val_0, Val_1, Val_2, Val_3], [Val_1]
 ```
