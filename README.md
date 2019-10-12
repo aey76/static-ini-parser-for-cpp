@@ -7,7 +7,7 @@ The idea is to make INI schema file, run the python script on it to produce cpp 
 1. publich load function that load and validate your INI file. if validation pass the function populate all the public variables.
 2. public variable for every variable in the INI file.
 
-## INI Schema file
+## INI Schema File
 The INI schema file is INI file. It defines the variables and additional rules for every variable.
 
 Simple INI schema just to get the idea:
@@ -28,7 +28,7 @@ var_1 = mandatory, int, [-10, 200]
 var_2 = optional, std::string, ["hello_world_1", "hello_world_2", "hello_world_3"], ["hello_world_1"]
 ```
 
-after running the script on the above INI schema file you will get two files, sample.ini and sample.hpp.
+after running the script on the above INI schema file you will get two files: sample.ini and sample.hpp.
 
 ``` INI
 # File Name: sample.ini
@@ -45,15 +45,22 @@ var_2 = "hello_world_1"
 // File Name: sample.hpp
 // #############################################################################
 
+enum class IniVarState
+{
+  Empty,
+  Has_Default_Value,
+  Has_Valid_Value
+};
+
 template<typename T>
 class IniVar
 {
 public:
-  bool isExist() const  { return (m_isExist); }
-  T value() const       { return (m_value); }
+  IniVarState state() const { return (m_varState); }
+  T value() const           { return (m_value); }
   
 private:
-  bool  m_isExist = false;
+  bool  m_varState = IniVarState::Empty;
   T     m_value;
 };
 
