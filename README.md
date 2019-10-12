@@ -1,4 +1,4 @@
-# Project Not Working Yet...
+# Project under construction !!!
 
 
 # static-ini-reader-for-cpp
@@ -19,13 +19,13 @@ Simple INI schema just to get the idea:
 
 # define variable named var_1 that will be translated to int variable in the cpp
 # code, his value must be ((var_1 >= -10) && (var_1 <= 200))
-var_1 = "mandatory, int, [-10, 200]"
+var_1 = mandatory, int, [-10, 200]
 
 # define variable named var_2 that will be translated to std::string variable in
 # the cpp code, his valid values can be "hello_world_1", "hello_world_2" or
 # "hello_world_3" and if it is not exist in the INI file the variable will get
 # default value of "hello_world_1".
-var_2 = "optional, std::string, ["hello_world_1", "hello_world_2", "hello_world_3"], ["hello_world_1"]"
+var_2 = optional, std::string, ["hello_world_1", "hello_world_2", "hello_world_3"], ["hello_world_1"]
 ```
 
 after running the script on the above INI schema file you will get two files, sample.ini and sample.hpp.
