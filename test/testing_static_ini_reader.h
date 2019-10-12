@@ -71,8 +71,8 @@ public:
   bool isReady() const;
   bool loadFile(const char* iniFileToLoad);
   
-  IniVar<int> v1_int{IniVarType::Mandatory, };
-  IniVar<int> v2_int;
+  IniVar<int> v1_int{IniVarType::Mandatory, -100, 200};
+  IniVar<int> v2_int{IniVarType::Optional, -100, 200, 10};
   
 private:
   
