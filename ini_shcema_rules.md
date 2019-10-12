@@ -17,15 +17,15 @@ Can be one of:
 
 ## cpp variable type
 Defines the variable type, can be:
-  - Any builtin type of cpp (`int`, `unsigned`, `bool`, `char`, `int8_t`, `int64_t`, `uint8_t`, `uint64_t`, `std::string`)
+  - Any builtin type of cpp (`int`, `unsigned`, `bool`, `char`, `double`, `float`, `int8_t`, `int64_t`, `uint8_t`, `uint64_t`, `std::string`)
   - User defined enum by setting the type to `enum class MyEnum`
 
 ## valid values
 Defines the valid values of the variable, For:
-  - numeric types: [`min value`, `max value`] or `[*]` for entire range of the type.
-  - bool: `[*]`.
+  - numeric types: [`min value`, `max value`] or `[*]` to accept any value the type can handle.
+  - bool: must be `[*]`, allowing just true or just false does not make logical sense.
   - std::string: [`"string_1"`, `"string_2"`, ..., `"string_n"`] or `[*]` to accept any string.
-  - enum class: [`Enum_Val_1`, `Enum_Val_2`, ..., `Enum_Val_n`], `[*]` is not allowed.
+  - enum class: [`Enum_Val_1`, `Enum_Val_2`, ..., `Enum_Val_n`], `[*]` is not allowed for enums.
 
 ## default value
 Relavent only for `optional` ini variable type, defines the cpp variable value in case the ini variable is missing from the loaded INI file.
