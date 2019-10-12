@@ -48,6 +48,11 @@ var_name = optional, uint32_t, [20, 1900], [100]
 var_name = optional, bool, [*], [true]
 ```
 
+**mandatory enum variable**:
+``` INI
+var_name = mandatory, enum class MyEnum, [Val_0, Val_1, Val_2, Val_3]
+```
+
 **optional enum variable with default value to Val_1**:
 ``` INI
 var_name = optional, enum class MyEnum, [Val_0, Val_1, Val_2, Val_3], [Val_1]
