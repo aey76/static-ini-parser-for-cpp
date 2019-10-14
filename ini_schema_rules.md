@@ -5,7 +5,7 @@
 INI variables defined using this general pattern:
 
 ``` INI
-var_name = ini variable type, cpp variable type, valid values, default value / [err]
+var_name = ini variable type; cpp variable type; valid values; default value / [err];
 ```
 
 ## ini variable type
@@ -35,36 +35,36 @@ The default value must be valid value.
 
 **mandatory int variable**:
 ``` INI
-var_name = mandatory, int, [-20, 1900]
+var_name = mandatory; int; [-20, 1900];
 ```
 
 **optional uint32_t variable with default value of 100**:
 ``` INI
-var_name = optional, uint32_t, [20, 1900], [100]
+var_name = optional; uint32_t; [20, 1900]; [100];
 ```
 
 **optional bool variable with default value of true**:
 ``` INI
-var_name = optional, bool, [*], [true]
+var_name = optional; bool; [*]; [true];
 ```
 
 **mandatory enum variable**:
 ``` INI
-var_name = mandatory, enum class MyEnum, [Val_0, Val_1, Val_2, Val_3]
+var_name = mandatory; enum class MyEnum; [Val_0, Val_1, Val_2, Val_3];
 ```
 
 **optional enum variable with default value of Val_1**:
 ``` INI
-var_name = optional, enum class MyEnum, [Val_0, Val_1, Val_2, Val_3], [Val_1]
+var_name = optional; enum class MyEnum; [Val_0, Val_1, Val_2, Val_3], [Val_1];
 ```
 
 **removed variable**:
 ``` INI
-var_name = removed
+var_name = removed;
 ```
 
 **same-as variable**:
 ``` INI
-var_name_1 = optional, uint32_t, [20, 1900], [100]
-var_name_2 = same-as, var_name_1
+var_name_1 = optional; uint32_t; [20, 1900]; [100];
+var_name_2 = same-as; var_name_1;
 ```
