@@ -21,18 +21,18 @@ enum class IniVarState
 };
 
 template<typename T>
-class IniVar
+class NumericVar
 {
 public:
-  IniVar() = delete;
-  IniVar(IniVarType iniVarType, T minVal, T maxVal):
+  NumericVar() = delete;
+  NumericVar(IniVarType iniVarType, T minVal, T maxVal):
     m_iniVarState(iniVarType),
     m_minValue(minVal),
     m_maxValue(maxVal),
     m_iniVarState(IniVarState::Empty)
   { }
   
-  IniVar(IniVarType iniVarType, T minVal, T maxVal, T defaultVal):
+  NumericVar(IniVarType iniVarType, T minVal, T maxVal, T defaultVal):
     m_iniVarState(iniVarType),
     m_minValue(minVal),
     m_maxValue(maxVal),
@@ -71,8 +71,8 @@ public:
   bool isReady() const;
   bool loadFile(const char* iniFileToLoad);
   
-  IniVar<int> v1_int{IniVarType::Mandatory, -100, 200};
-  IniVar<int> v2_int{IniVarType::Optional, -100, 200, 10};
+  NumericVar<int> v1_int{IniVarType::Mandatory, -100, 200};
+  NumericVar<int> v2_int{IniVarType::Optional, -100, 200, 10};
   
 private:
   
