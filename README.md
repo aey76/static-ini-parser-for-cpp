@@ -1,6 +1,12 @@
 # Project under construction !!!
 
 
+# Roadmap
+  - [ ] First version with that support built-in types - WIP
+  - [ ] Add support for user defined types
+  - [ ] Performance
+
+
 # static-ini-reader-for-cpp
 Define INI schema to generate INI file and cpp code to load and validate INI files in static way.
 The idea is to make INI schema file, run the python script on it to produce cpp class that has:
@@ -45,24 +51,7 @@ var_2 = "hello_world_1"
 // File Name: sample.hpp
 // #############################################################################
 
-enum class IniVarState
-{
-  Empty,
-  Has_Default_Value,
-  Has_Valid_Value
-};
-
-template<typename T>
-class IniVar
-{
-public:
-  IniVarState state() const { return (m_varState); }
-  T value() const           { return (m_value); }
-  
-private:
-  bool  m_varState = IniVarState::Empty;
-  T     m_value;
-};
+#include "static_ini.h"
 
 class Sample
 {
@@ -70,8 +59,8 @@ public:
   bool isReady();
   bool loadFile(const char* iniFileToLoad);
   
-  IniVar<int>         var_1;
-  IniVar<std::string> var_2;
+  sini::IniVar<int>         var_1;
+  sini::IniVar<std::string> var_2;
 };
 ```
 
@@ -99,3 +88,5 @@ int main()
   return 0;
 }
 ```
+
+Check ini_schema_rules.md for complete rules definition.
